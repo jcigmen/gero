@@ -13,6 +13,7 @@ ext.versions = [
         // Libraries
         dagger             : '2.7',
         gson               : '2.4',
+        mosbyMvp           : '2.0.0',
         retrofit           : '2.0.0-beta3',
         rxJava             : '2.0.0',
         supportLibs        : '23.1.1',
@@ -36,6 +37,7 @@ ext.libraries = [
         dagger             : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler     : "com.google.dagger:dagger-compiler:$versions.dagger",
         gson               : "com.google.code.gson:gson:$versions.gson",
+        mosbyMvp           : "com.hannesdorfmann.mosby:mvp:$versions.mosbyMvp",
         retrofit           : "com.squareup.retrofit2:retrofit:$versions.retrofit",
         retrofitGsonAdapter: "com.squareup.retrofit2:retrofit:$versions.retrofit",
         rxJava             : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
