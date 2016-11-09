@@ -22,13 +22,8 @@ android {
         }
     }
     sourceSets {
-        // Unit tests directory
         test.java.srcDir 'src/unitTests/java'
-
-        // Integration tests directory
         test.java.srcDir 'src/integrationTests/java'
-
-        // Functional tests or Android UI tests
         androidTest.java.srcDir 'src/functionalTests/java'
     }
 }
