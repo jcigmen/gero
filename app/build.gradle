@@ -38,6 +38,7 @@ dependencies {
     androidTestCompile testLibraries.supportTestRunner
 
     compile libraries.dagger
+    compile libraries.gson
     compile libraries.rxJava
     compile libraries.supportAnnotations
     compile libraries.supportAppCompat
