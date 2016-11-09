@@ -9,6 +9,7 @@ ext.versions = [
 
         // Gradle plugins
         androidGradlePlugin: '2.2.1',
+        retrolambda        : '3.3.1',
 
         // Libraries
         dagger             : '2.7',
@@ -30,7 +31,8 @@ ext.annotationProcessors = [
 ]
 
 ext.gradlePlugins = [
-        android: "com.android.tools.build:gradle:$versions.androidGradlePlugin"
+        android    : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+        retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambda"
 ]
 
 ext.libraries = [
