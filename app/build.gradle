@@ -34,17 +34,20 @@ android {
 }
 
 dependencies {
+    annotationProcessor annotationProcessors.dagger
+
     androidTestCompile testLibraries.espresso
     androidTestCompile testLibraries.espressoContrib
     androidTestCompile testLibraries.mockito
-    androidTestCompile testLibraries.supportTestRunner
     androidTestCompile testLibraries.supportTestRules
+    androidTestCompile testLibraries.supportTestRunner
 
+    compile libraries.dagger
     compile libraries.supportAnnotations
     compile libraries.supportAppCompat
+    compile libraries.supportCardView
     compile libraries.supportDesign
     compile libraries.supportRecyclerView
-    compile libraries.supportCardView
 
     testCompile testLibraries.junit
 }
