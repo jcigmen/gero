@@ -1,10 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply from: '../config/quality/jacoco.gradle'
 apply from: '../config/quality/quality.gradle'
 
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
+    dataBinding {
+        enabled true
+    }
     defaultConfig {
         applicationId "org.noobs2d.gero"
         minSdkVersion versions.minSdk
@@ -53,6 +57,7 @@ dependencies {
     compile libraries.dagger
     compile libraries.gson
     compile libraries.mosbyMvp
+    compile libraries.picasso
     compile libraries.retrofit
     compile libraries.retrofitGsonAdapter
     compile libraries.rxJava
