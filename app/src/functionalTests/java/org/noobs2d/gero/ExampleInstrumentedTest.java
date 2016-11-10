@@ -23,6 +23,7 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("org.noobs2d.gero", appContext.getPackageName());
+        String expectedPackageName = "org.noobs2d.gero" + (BuildConfig.DEBUG ? ".debug" : "");
+        assertEquals(expectedPackageName, appContext.getPackageName());
     }
 }
