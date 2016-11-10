@@ -56,6 +56,7 @@ dependencies {
     compile libraries.dagger
     compile libraries.gson
     compile libraries.mosbyMvp
+    compile libraries.picasso
     compile libraries.retrofit
     compile libraries.retrofitGsonAdapter
     compile libraries.rxJava
