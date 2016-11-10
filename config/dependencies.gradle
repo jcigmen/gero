@@ -12,6 +12,7 @@ ext.versions = [
 
         // Gradle plugins
         androidGradlePlugin: '2.2.1',
+        jacoco             : '0.7.6.201602180812',
         retrolambda        : '3.3.1',
 
         // Libraries
@@ -42,6 +43,7 @@ ext.debugTools = [
 
 ext.gradlePlugins = [
         android    : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+        jacoco : "org.jacoco:org.jacoco.core:$versions.jacoco",
         retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambda"
 ]
 
