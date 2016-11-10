@@ -54,6 +54,8 @@ dependencies {
     compile libraries.supportDesign
     compile libraries.supportRecyclerView
 
+    debugCompile debugTools.leakCanary
+
     testCompile testLibraries.junit
     testCompile testLibraries.mockito
 }
