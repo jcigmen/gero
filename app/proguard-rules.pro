@@ -28,5 +28,13 @@
 # Retain declared checked exceptions for use by a Proxy instance.
 -keepattributes Exceptions
 
+# okio warnings
+-dontwarn okio.**
+
 # Picasso
 -dontwarn com.squareup.okhttp.**
+
+# For duplicate definition of classes between android and apache
+-dontnote android.net.http.*
+-dontnote org.apache.commons.codec.**
+-dontnote org.apache.http.**
