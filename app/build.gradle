@@ -5,6 +5,9 @@ apply from: '../config/quality/quality.gradle'
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
+    dataBinding {
+        enabled true
+    }
     defaultConfig {
         applicationId "org.noobs2d.gero"
         minSdkVersion versions.minSdk
