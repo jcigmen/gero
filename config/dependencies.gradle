@@ -34,7 +34,9 @@ ext.annotationProcessors = [
 ]
 
 ext.debugTools = [
-        leakCanary: "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary"
+        leakCanary       : "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+        leakCanaryRelease: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
+        leakCanaryTest   : "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary"
 ]
 
 ext.gradlePlugins = [
