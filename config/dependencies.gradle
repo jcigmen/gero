@@ -16,6 +16,7 @@ ext.versions = [
         retrolambda        : '3.3.1',
 
         // Libraries
+        autoValue          : '1.2',
         dagger             : '2.7',
         gson               : '2.4',
         mosbyMvp           : '2.0.0',
@@ -32,7 +33,8 @@ ext.versions = [
 ]
 
 ext.annotationProcessors = [
-        dagger: "com.google.dagger:dagger-compiler:$versions.dagger"
+        autoValue: "com.google.auto.value:auto-value:$versions.autoValue",
+        dagger   : "com.google.dagger:dagger-compiler:$versions.dagger"
 ]
 
 ext.debugTools = [
@@ -43,11 +45,12 @@ ext.debugTools = [
 
 ext.gradlePlugins = [
         android    : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
-        jacoco : "org.jacoco:org.jacoco.core:$versions.jacoco",
+        jacoco     : "org.jacoco:org.jacoco.core:$versions.jacoco",
         retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambda"
 ]
 
 ext.libraries = [
+        autoValue          : "com.google.auto.value:auto-value:$versions.autoValue",
         dagger             : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler     : "com.google.dagger:dagger-compiler:$versions.dagger",
         gson               : "com.google.code.gson:gson:$versions.gson",

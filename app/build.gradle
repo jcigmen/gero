@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    annotationProcessor annotationProcessors.autoValue
     annotationProcessor annotationProcessors.dagger
 
     androidTestCompile testLibraries.espresso
@@ -68,6 +69,8 @@ dependencies {
     compile libraries.supportRecyclerView
 
     debugCompile debugTools.leakCanary
+
+    provided libraries.autoValue
 
     releaseCompile debugTools.leakCanaryRelease
 
