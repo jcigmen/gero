@@ -29,7 +29,7 @@ public abstract class Android {
     public abstract String name();
 
     @AutoValue.Builder
-    public static abstract class Builder {
+    public abstract static class Builder {
         public abstract Android build();
         public abstract Builder setAvatarUrl(String avatarUrl);
         public abstract Builder setBiography(String biography);
