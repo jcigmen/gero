@@ -26,8 +26,12 @@ public class DefaultAndroidFacadeTransformerTest {
 
     @Test
     public void transform() {
-        assertThatTransformedProperly(ANDROID_FACADE,
-                defaultAndroidFacadeTransformer.transform(ANDROID_FACADE).blockingGet());
+        assertThatTransformedProperly(
+                ANDROID_FACADE,
+                defaultAndroidFacadeTransformer
+                        .transform(ANDROID_FACADE)
+                        .blockingGet()
+        );
     }
 
     private void assertThatTransformedProperly(AndroidFacade facade, Android android) {
@@ -45,7 +49,9 @@ public class DefaultAndroidFacadeTransformerTest {
     public void transformArray() {
         AndroidFacade[] facades = new AndroidFacade[]{ANDROID_FACADE};
 
-        List<Android> androids = defaultAndroidFacadeTransformer.transform(facades).blockingGet();
+        List<Android> androids = defaultAndroidFacadeTransformer
+                .transform(facades)
+                .blockingGet();
 
         assertEquals(facades.length, androids.size());
 

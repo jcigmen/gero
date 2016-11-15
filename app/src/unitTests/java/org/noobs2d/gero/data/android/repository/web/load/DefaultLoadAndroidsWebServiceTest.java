@@ -33,8 +33,10 @@ public class DefaultLoadAndroidsWebServiceTest {
     @Before
     public void setUp() {
         defaultLoadAndroidsWebService =
-                new DefaultLoadAndroidsWebService(new DefaultAndroidFacadeTransformer(),
-                                                  mock(AndroidsRetrofitWebService.class));
+                new DefaultLoadAndroidsWebService(
+                        new DefaultAndroidFacadeTransformer(),
+                        mock(AndroidsRetrofitWebService.class)
+                );
     }
 
     @Test
@@ -45,14 +47,19 @@ public class DefaultLoadAndroidsWebServiceTest {
         getAndroidResponse.items = facades;
 
         given(getAndroidResponse.isSuccessful()).willReturn(true);
-        given(defaultLoadAndroidsWebService.androidsRetrofitWebService.get()).willReturn(Observable.just(
-                getAndroidResponse));
+        given(defaultLoadAndroidsWebService.androidsRetrofitWebService.get())
+                .willReturn(Observable.just(getAndroidResponse));
 
-        defaultLoadAndroidsWebService.load()
-                                     .subscribe(loadedAndroids -> assertEquals(
-                                             defaultLoadAndroidsWebService.androidFacadeTransformer.transform(facades).blockingGet(),
-                                             loadedAndroids)
-                                     );
+        defaultLoadAndroidsWebService
+                .load()
+                .subscribe(loadedAndroids -> assertEquals(
+                        defaultLoadAndroidsWebService.androidFacadeTransformer
+                                .transform(
+                                        facades)
+                                .blockingGet(),
+                        loadedAndroids
+                           )
+                );
     }
 
     @Test
@@ -62,13 +69,21 @@ public class DefaultLoadAndroidsWebServiceTest {
         given(defaultLoadAndroidsWebService.androidsRetrofitWebService.get())
                 .willReturn(Observable.just(getAndroidsResponse));
 
-        defaultLoadAndroidsWebService.load()
-                                     .subscribe(loadedAndroids -> fail(),
-                                                error -> {
-                                                    assertThat(error, instanceOf(ApiRequestFailedException.class));
-                                                    assertThat("Failed getting android list", equalTo(error.getMessage()));
-                                                }
-                                     );
+        defaultLoadAndroidsWebService
+                .load()
+                .subscribe(
+                        loadedAndroids -> fail(),
+                        error -> {
+                            assertThat(
+                                    error,
+                                    instanceOf(ApiRequestFailedException.class)
+                            );
+                            assertThat(
+                                    "Failed getting android list",
+                                    equalTo(error.getMessage())
+                            );
+                        }
+                );
     }
 
     /**
@@ -84,9 +99,13 @@ public class DefaultLoadAndroidsWebServiceTest {
         given(defaultLoadAndroidsWebService.androidsRetrofitWebService.get(anyString()))
                 .willReturn(Observable.just(getAndroidByIdResponse));
 
-        defaultLoadAndroidsWebService.load("")
+        defaultLoadAndroidsWebService
+                .load("")
                 .subscribe(loadedAndroid -> assertEquals(
-                        defaultLoadAndroidsWebService.androidFacadeTransformer.transform(facade).blockingGet(),
+                        defaultLoadAndroidsWebService.androidFacadeTransformer
+                                .transform(
+                                        facade)
+                                .blockingGet(),
                         loadedAndroid
                 ));
     }
@@ -101,12 +120,20 @@ public class DefaultLoadAndroidsWebServiceTest {
         given(defaultLoadAndroidsWebService.androidsRetrofitWebService.get(anyString()))
                 .willReturn(Observable.just(getAndroidByIdResponse));
 
-        defaultLoadAndroidsWebService.load("")
-                .subscribe(loadedAndroid -> fail(),
-                           error -> {
-                               assertThat(error, instanceOf(ApiRequestFailedException.class));
-                               assertThat("Failed getting android by ID", equalTo(error.getMessage()));
-                           }
+        defaultLoadAndroidsWebService
+                .load("")
+                .subscribe(
+                        loadedAndroid -> fail(),
+                        error -> {
+                            assertThat(
+                                    error,
+                                    instanceOf(ApiRequestFailedException.class)
+                            );
+                            assertThat(
+                                    "Failed getting android by ID",
+                                    equalTo(error.getMessage())
+                            );
+                        }
                 );
     }
 }
