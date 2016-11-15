@@ -8,6 +8,6 @@ import org.noobs2d.gero.data.api.ApiResponse;
  * @author Julious Igmen
  */
 public class GetAndroidsResponse extends ApiResponse {
-    @SerializedName("items") AndroidFacade[] items;
+    @SerializedName("items") public AndroidFacade[] items;
     @SerializedName("count") int count;
 }

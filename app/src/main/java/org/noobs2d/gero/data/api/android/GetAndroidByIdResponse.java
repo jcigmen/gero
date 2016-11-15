@@ -8,5 +8,5 @@ import org.noobs2d.gero.data.api.ApiResponse;
  * @author Julious Igmen
  */
 public class GetAndroidByIdResponse extends ApiResponse {
-    @SerializedName("android") AndroidFacade android;
+    @SerializedName("android") public AndroidFacade android;
 }
