@@ -37,6 +37,7 @@ project.afterEvaluate {
                         excludes: ['**/android/databinding/*', // Android databinding classes
                                    '**/AutoValue_*.class',
                                    '**/BR.class',
+                                   '**/*Application.class',
                                    '**/R.class',
                                    '**/R$*.class',
                                    '**/*$ViewInjector*.*',
