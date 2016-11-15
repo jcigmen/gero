@@ -5,12 +5,14 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @author Julious Igmen
  */
-public abstract class ApiResponse {
+public class ApiResponse {
+
+    static final int STATUS_OK = 200;
 
     @SerializedName("message") String message;
     @SerializedName("status") int status;
 
     public boolean isSuccessful() {
-        return status == 200 && message != null && !message.isEmpty();
+        return status == STATUS_OK && message != null && !message.isEmpty();
     }
 }
