@@ -10,22 +10,9 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 public abstract class Android {
 
-    @AutoValue.Builder
-    abstract static class Builder {
-        abstract Android build();
-        abstract Builder setAge(int age);
-        abstract Builder setAvatarUrl(String avatarUrl);
-        abstract Builder setBiography(String biography);
-        abstract Builder setId(String id);
-        abstract Builder setLargeImageUrl(String largeImageUrl);
-        abstract Builder setName(String name);
-    }
-
-    static Builder builder() {
+    public static Builder builder() {
         return new AutoValue_Android.Builder();
     }
-
-    public abstract int age();
 
     @NonNull
     public abstract String avatarUrl();
@@ -36,8 +23,18 @@ public abstract class Android {
     @NonNull
     public abstract String id();
 
-    @NonNull abstract String largeImageUrl();
+    @NonNull public abstract String largeImageUrl();
 
     @NonNull
     public abstract String name();
+
+    @AutoValue.Builder
+    public static abstract class Builder {
+        public abstract Android build();
+        public abstract Builder setAvatarUrl(String avatarUrl);
+        public abstract Builder setBiography(String biography);
+        public abstract Builder setId(String id);
+        public abstract Builder setLargeImageUrl(String largeImageUrl);
+        public abstract Builder setName(String name);
+    }
 }
