@@ -13,8 +13,7 @@ import io.reactivex.Observable;
  * @author Julious Igmen
  */
 
-public class DefaultLoadAndroidsWebService
-        implements LoadAndroidsWebService {
+public class DefaultLoadAndroidsWebService implements LoadAndroidsWebService {
 
     AndroidFacadeTransformer androidFacadeTransformer;
     AndroidsRetrofitWebService androidsRetrofitWebService;
@@ -28,15 +27,16 @@ public class DefaultLoadAndroidsWebService
     @Override
     public Observable<List<Android>> load() {
         return androidsRetrofitWebService
-                .get()
-                .flatMap(getAndroidsResponse -> {
+            .get()
+            .flatMap(
+                getAndroidsResponse -> {
                     if (getAndroidsResponse.isSuccessful()) {
                         return androidFacadeTransformer
-                                .transform(getAndroidsResponse.items)
-                                .toObservable();
+                            .transform(getAndroidsResponse.items)
+                            .toObservable();
                     } else {
                         return Observable.error(new ApiRequestFailedException(
-                                "Failed getting android list"));
+                            "Failed getting android list"));
                     }
                 });
     }
@@ -44,15 +44,16 @@ public class DefaultLoadAndroidsWebService
     @Override
     public Observable<Android> load(String id) {
         return androidsRetrofitWebService
-                .get(id)
-                .flatMap(getAndroidByIdResponse -> {
+            .get(id)
+            .flatMap(
+                getAndroidByIdResponse -> {
                     if (getAndroidByIdResponse.isSuccessful()) {
                         return androidFacadeTransformer
-                                .transform(getAndroidByIdResponse.android)
-                                .toObservable();
+                            .transform(getAndroidByIdResponse.android)
+                            .toObservable();
                     } else {
                         return Observable.error(new ApiRequestFailedException(
-                                "Failed getting android by ID"));
+                            "Failed getting android by ID"));
                     }
                 });
     }
