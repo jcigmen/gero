@@ -49,7 +49,9 @@ public class DefaultAndroidFacadeTransformerTest {
 
         assertEquals(facades.length, androids.size());
 
-        for (int i = 0; i < facades.length; i++) assertThatTransformedProperly(facades[i], androids.get(i));
+        for (int i = 0; i < facades.length; i++) {
+            assertThatTransformedProperly(facades[i], androids.get(i));
+        }
     }
 
     static {

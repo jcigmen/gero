@@ -12,7 +12,8 @@ import io.reactivex.Single;
  * @author Julious Igmen
  */
 
-public class DefaultAndroidFacadeTransformer implements AndroidFacadeTransformer {
+public class DefaultAndroidFacadeTransformer
+        implements AndroidFacadeTransformer {
 
     @Override
     public Single<Android> transform(AndroidFacade androidFacade) {
@@ -33,8 +34,9 @@ public class DefaultAndroidFacadeTransformer implements AndroidFacadeTransformer
     public Single<List<Android>> transform(AndroidFacade... androidFacades) {
         return Single.fromCallable(() -> {
             List<Android> androids = new ArrayList<>();
-            for (AndroidFacade facade : androidFacades)
+            for (AndroidFacade facade : androidFacades) {
                 androids.add(toAndroid(facade));
+            }
             return androids;
         });
     }
