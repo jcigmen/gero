@@ -28,20 +28,24 @@ public class DefaultLoadAndroidsWebService
     @Override
     public Observable<List<Android>> load() {
         return androidsRetrofitWebService.get().flatMap(getAndroidsResponse -> {
-            if (getAndroidsResponse.isSuccessful())
-                return androidFacadeTransformer.transform(getAndroidsResponse.items).toObservable();
-            else
+            if (getAndroidsResponse.isSuccessful()) {
+                return androidFacadeTransformer.transform(getAndroidsResponse.items)
+                                               .toObservable();
+            } else {
                 return Observable.error(new ApiRequestFailedException("Failed getting android list"));
+            }
         });
     }
 
     @Override
     public Observable<Android> load(String id) {
         return androidsRetrofitWebService.get(id).flatMap(getAndroidByIdResponse -> {
-            if (getAndroidByIdResponse.isSuccessful())
-                return androidFacadeTransformer.transform(getAndroidByIdResponse.android).toObservable();
-            else
+            if (getAndroidByIdResponse.isSuccessful()) {
+                return androidFacadeTransformer.transform(getAndroidByIdResponse.android)
+                                               .toObservable();
+            } else {
                 return Observable.error(new ApiRequestFailedException("Failed getting android by ID"));
+            }
         });
     }
 }
