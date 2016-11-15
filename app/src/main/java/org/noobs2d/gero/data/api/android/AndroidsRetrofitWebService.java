@@ -3,7 +3,6 @@ package org.noobs2d.gero.data.api.android;
 import org.noobs2d.gero.data.api.ApiResponse;
 
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -19,17 +18,17 @@ public interface AndroidsRetrofitWebService {
     String ENDPOINT = "android";
 
     @DELETE(ENDPOINT)
-    Observable<Call<ApiResponse>> delete(@Query("id") String id);
+    Observable<ApiResponse> delete(@Query("id") String id);
 
     @GET(ENDPOINT)
-    Observable<Call<GetAndroidsResponse>> get();
+    Observable<GetAndroidsResponse> get();
 
     @GET(ENDPOINT)
-    Observable<Call<GetAndroidByIdResponse>> get(@Query("id") String id);
+    Observable<GetAndroidByIdResponse> get(@Query("id") String id);
 
     @POST(ENDPOINT)
-    Observable<Call<PostAndroidResponse>> post(@Body AndroidFacade androidFacade);
+    Observable<PostAndroidResponse> post(@Body AndroidFacade androidFacade);
 
     @PUT(ENDPOINT)
-    Observable<Call<ApiResponse>> put(@Body AndroidFacade androidFacade);
+    Observable<ApiResponse> put(@Body AndroidFacade androidFacade);
 }
