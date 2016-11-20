@@ -47,6 +47,7 @@ android {
 
 dependencies {
     annotationProcessor annotationProcessors.autoValue
+    annotationProcessor annotationProcessors.autoValueGsonAdapter
     annotationProcessor annotationProcessors.dagger
 
     androidTestCompile testLibraries.espresso
@@ -72,6 +73,7 @@ dependencies {
     debugCompile debugTools.leakCanary
 
     provided libraries.autoValue
+    provided libraries.autoValueGsonAdapter
 
     releaseCompile debugTools.leakCanaryRelease
 
