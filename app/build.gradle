@@ -78,4 +78,5 @@ dependencies {
     testCompile debugTools.leakCanaryTest
     testCompile testLibraries.junit
     testCompile testLibraries.mockito
+    testCompile testLibraries.robolectric
 }

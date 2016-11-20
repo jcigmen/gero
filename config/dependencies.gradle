@@ -30,6 +30,7 @@ ext.versions = [
         espresso           : '2.2.2',
         junit              : '4.12',
         mockito            : '1.10.19',
+        robolectric        : '3.1.4',
         supportTestRunner  : '0.5'
 ]
 
@@ -73,6 +74,7 @@ ext.testLibraries = [
         espressoContrib  : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
         mockito          : "org.mockito:mockito-core:$versions.mockito",
         junit            : "junit:junit:$versions.junit",
+        robolectric      : "org.robolectric:robolectric:$versions.robolectric",
         supportTestRunner: "com.android.support.test:runner:$versions.supportTestRunner",
         supportTestRules : "com.android.support.test:rules:$versions.supportTestRunner",
 ]
