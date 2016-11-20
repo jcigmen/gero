@@ -9,7 +9,6 @@ import com.google.gson.reflect.TypeToken;
 
 import org.noobs2d.gero.data.android.entity.Android;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 /**
@@ -29,14 +28,19 @@ public class AndroidListRxPreferenceAdapter
     @Override
     public List<Android> get(@NonNull String key, @NonNull SharedPreferences preferences) {
         // uses Reflection in order to accurately infer the type
-        Type type = new TypeToken<List<Android>>(){}.getType();
-        return gson.fromJson(preferences.getString(key, ""), type);
+        return gson.fromJson(
+                preferences.getString(key, ""),
+                new TypeToken<List<Android>>() {
+                }.getType()
+        );
     }
 
     @Override
     public void set(@NonNull String key,
                     @NonNull List<Android> value,
                     @NonNull SharedPreferences.Editor editor) {
-        editor.putString(key, gson.toJson(value)).apply();
+        editor
+                .putString(key, gson.toJson(value))
+                .apply();
     }
 }
