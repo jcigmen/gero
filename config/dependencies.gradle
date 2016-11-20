@@ -23,6 +23,7 @@ ext.versions = [
         picasso            : '2.5.2',
         retrofit           : '2.0.0-beta3',
         rxJava             : '2.0.0',
+        rxPreferences      : '1.0.2',
         supportLibs        : '23.1.1',
 
         // Test libraries
@@ -59,6 +60,7 @@ ext.libraries = [
         retrofit           : "com.squareup.retrofit2:retrofit:$versions.retrofit",
         retrofitGsonAdapter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
         rxJava             : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        rxPreferences      : "com.f2prateek.rx.preferences:rx-preferences:$versions.rxPreferences",
         supportAnnotations : "com.android.support:support-annotations:$versions.supportLibs",
         supportAppCompat   : "com.android.support:appcompat-v7:$versions.supportLibs",
         supportDesign      : "com.android.support:design:$versions.supportLibs",

@@ -62,6 +62,7 @@ dependencies {
     compile libraries.retrofit
     compile libraries.retrofitGsonAdapter
     compile libraries.rxJava
+    compile libraries.rxPreferences
     compile libraries.supportAnnotations
     compile libraries.supportAppCompat
     compile libraries.supportCardView
