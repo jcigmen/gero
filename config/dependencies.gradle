@@ -28,6 +28,7 @@ ext.versions = [
         supportLibs         : '23.1.1',
 
         // Test libraries
+        assertJ             : '2.5.0',
         espresso            : '2.2.2',
         junit               : '4.12',
         mockito             : '1.10.19',
@@ -73,6 +74,7 @@ ext.libraries = [
 ]
 
 ext.testLibraries = [
+        assertJ          : "org.assertj:assertj-core:$versions.assertJ",
         espresso         : "com.android.support.test.espresso:espresso-core:$versions.espresso",
         espressoContrib  : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
         mockito          : "org.mockito:mockito-core:$versions.mockito",
