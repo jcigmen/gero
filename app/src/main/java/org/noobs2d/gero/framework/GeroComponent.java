@@ -7,7 +7,11 @@ import dagger.Component;
 /**
  * @author Julious Igmen
  */
-@Component(modules = WebServiceModule.class)
+@Component(modules = {
+    CacheModule.class,
+    UtilityModule.class,
+    WebServiceModule.class
+})
 @Singleton
 public interface GeroComponent {
 }
