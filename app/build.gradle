@@ -39,9 +39,14 @@ android {
         disable 'InvalidPackage' // Okio references java.nio that does not presented in Android SDK.
     }
     sourceSets {
+        def testCommonsDirectory = 'src/testCommons/java'
+
         test.java.srcDir 'src/unitTests/java'
         test.java.srcDir 'src/integrationTests/java'
+        test.java.srcDir testCommonsDirectory
+
         androidTest.java.srcDir 'src/functionalTests/java'
+        androidTest.java.srcDir testCommonsDirectory
     }
 }
 
